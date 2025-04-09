@@ -1,5 +1,5 @@
 let mainContainer=document.querySelector("#main-container");
-let btns=document.querySelector("#buttons");
+let btns=document.querySelector("#button-container");
 let calcSymbols=["AC", "+/-", "%", "/", "7", "8", "9", "*", "4", "5", "6", "-", "1", "2", "3", "+","0", ".", "="];
 
 
@@ -7,21 +7,23 @@ let btnArray=[];
 for (let i=0;i<19;i++){
     btnArray.push(document.createElement("button"));
     btns.appendChild(btnArray[i]);
-    btnArray[i].style.width="24%";
-    btnArray[i].style.height="19%";
-    btnArray[i].style.borderRadius="5px";
-    btnArray[i].style.borderWidth="0px";
-    btnArray[i].style.padding="auto";
     btnArray[i].textContent=calcSymbols[i];
+    
     if (i==16){
-        btnArray[i].style.width="49%"; 
-    }
-    if((i+1)%4==0){
-        btnArray[i].style.backgroundColor="#FF8F1F";
-    }else if(i<3){
-        btnArray[i].style.backgroundColor="rgb(30, 144, 255)";
-    }else{
-        btnArray[i].style.backgroundColor="rgb(33, 124, 126)";
+        btnArray[i].style.width="49.5%"; 
     }
 }
-btnArray[18].style.backgroundColor="#FF8F1F";
+
+operatorIndex=[3,7,11,15,18];
+clearIndex=[0,1,2];
+digitIndex=[4,5,6,8,9,10,12,13,14,16,17];
+
+for(let index of operatorIndex){
+    btnArray[index].style.backgroundColor="#FF8F1F";
+}
+for(let index of digitIndex){
+    btnArray[index].style.backgroundColor="rgb(33, 124, 126)";
+}
+for(let index of clearIndex){
+    btnArray[index].style.backgroundColor="rgb(30, 144, 255)";;
+}

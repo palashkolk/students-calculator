@@ -25,7 +25,7 @@ body{
     height: 16.67%;
     margin: 5px 5px;
 }
-#buttons{
+#button-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -35,4 +35,11 @@ body{
     height: 84%;
     padding:0px 0px;
     margin:0px 0px;
+}
+button{
+   width:24%;
+   height:19%;
+   border-radius:5px;
+   border-width:0px;
+   padding:auto;
 }
