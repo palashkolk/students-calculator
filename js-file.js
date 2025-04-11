@@ -7,7 +7,7 @@ const digitIndex=[4,5,6,8,9,10,12,13,14,16,17];
 const ORANGE="#FF8F1F";
 const GREEN="rgb(33, 124, 126)";
 const BLUE="rgb(30, 144, 255)";
-let makeBtns={"operatorButtons":[operatorIndex, ORANGE], "clearButtons":[clearIndex, BLUE], "digitButtons":[digitIndex, GREEN]};
+const btnProps={"operatorButtons":[operatorIndex, ORANGE], "clearButtons":[clearIndex, BLUE], "digitButtons":[digitIndex, GREEN]};
 
 
 function Btns(index, symbols, color, btnArray){
@@ -36,8 +36,8 @@ for (let i=0;i<19;i++){
 }
 
 
-for (let items in makeBtns){
-    const someBtns = new Btns(makeBtns[items][0], calcSymbols, makeBtns[items][1], btnArray);
+for (let items in btnProps){
+    const someBtns = new Btns(btnProps[items][0], calcSymbols, btnProps[items][1], btnArray);
     someBtns.setProperty();
     
 }
